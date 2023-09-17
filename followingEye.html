@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Following Browser</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      #page1 {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #mycanvas {
+        border: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page1">
+      <canvas id="mycanvas" width="500" height="500"></canvas>
+    </div>
+
+    <script src="pig.js"></script>
+  </body>
+</html>

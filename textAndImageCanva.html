@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text and IMage</title>
+  </head>
+  <body>
+    <canvas id="mycanva" width="600" height="600"></canvas>
+    <script>
+      const canvas = document.getElementById("mycanva");
+      const ctx = canvas.getContext("2d");
+
+      let x = 0;
+      const maxX = 600;
+      let y = 100;
+      let p = 0;
+
+      const backgroundImage = new Image();
+      backgroundImage.src = "home1.png";
+
+      animation();
+
+      function animation() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        p = p + 0.002;
+        if (p > 1) {
+          p = 0;
+        }
+        let mx = x + maxX * p;
+        ctx.font = "30px Arial";
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "red";
+        ctx.fillText("hello world", mx, y);
+        ctx.drawImage(backgroundImage, 0, 0, 600, 600);
+
+        requestAnimationFrame(animation);
+      }
+    </script>
+  </body>
+</html>

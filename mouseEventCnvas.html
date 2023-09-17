@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Mouse Event With canvas</title>
+</head>
+<body>
+    <canvas id="mycanvas" style="background-color: grey;" width="400" height="400"></canvas>
+
+    <script>
+        const canva = document.getElementById("mycanvas");
+        const ctx = canva.getContext("2d");
+
+
+        let x=200;
+        let y=200;
+        const minRad=10;
+        const MaxRad=20;
+        let p=0;
+
+    function animation()
+    {
+      const rad = minRad+MaxRad*p;
+         p=p+0.02;
+        if(p>1)
+        {
+            p=0;
+        }
+         ctx.clearRect(0,0,canva.width,canva.height);
+         ctx.beginPath();
+         ctx.arc(x,y,rad,0,2*Math.PI);
+         ctx.stroke();
+        requestAnimationFrame(animation);
+    }
+
+    animation();
+
+      canva.addEventListener("mousemove",(info)=>
+      {
+         x = info.offsetX;
+         y = info.offsetY;
+
+      })
+
+
+    </script>
+</body>
+</html>

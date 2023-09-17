@@ -1,0 +1,10 @@
+<script>
+  const audio = new Audio("audofile.wav");
+
+  document.addEventListener("keydown", function (info) {
+    if (info.code == "Digit1") {
+      audio.currentTime = 0;
+      audio.play();
+    }
+  });
+</script>

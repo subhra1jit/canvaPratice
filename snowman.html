@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Snow man</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="400" height="400" style="background-color: aqua">
+
+    </canvas>
+    <script>
+        const canva = document.getElementById("mycanvas");
+        const ctx = canva.getContext("2d");
+
+
+        ctx.beginPath();
+        ctx.arc(200,300,70,0,2*Math.PI);
+        ctx.fillStyle="white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(200,300-70-50,50,0,2*Math.PI);
+        ctx.fillStyle="white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(200,300-70-100-30,30,0,2*Math.PI);
+        ctx.fillStyle="white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.rect(200-33,300-70-100-30-25,65,20);
+        ctx.fillStyle="black";
+        ctx.fill();
+
+         ctx.beginPath();
+        ctx.rect(200-25,300-70-100-30-45,50,40);
+        ctx.fillStyle="black";
+        ctx.fill();
+
+
+    </script>
+</body>
+</html>
